@@ -1,0 +1,88 @@
+/* Opći stilovi za tijelo stranice */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Svijetla pozadina */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Poravnanje na vrhu ekrana */
+    height: 100vh;
+    overflow-x: hidden; /* Sprečavanje horizontalnog pomicanja */
+  }
+
+  /* Stiliziranje filtera */
+  #filteri {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Dodajemo širinu od 90% */
+    max-width: 800px; /* Maksimalna širina filtera */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #filteri select, #filteri input, #filteri button {
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+
+  #filteri button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  #filteri button:hover {
+    background-color: #45a049;
+  }
+
+  #filter-rating {
+    width: 100%; /* Dodajemo širinu od 100% */
+    margin-top: 10px;
+  }
+
+  #rating-value {
+    margin-left: 10px;
+    font-weight: bold;
+  }
+
+  /* Stiliziranje tablice */
+  .styled-table {
+    width: 90%; /* Promijenjena širina tablice */
+    max-width: 800px; /* Maksimalna širina tablice */
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Omogućavanje horizontalnog pomicanja u tablici */
+  }
+
+  .styled-table th {
+    background-color: #4CAF50; /* Tamno zelena boja */
+    color: white; /* Bijeli tekst */
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .styled-table td {
+    background-color: #f9f9f9; /* Svijetlosiva boja */
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd; /* Ispod svakog reda dodajemo sivu liniju */
+  }
+
+  .styled-table tr:hover {
+    background-color: #f1f1f1; /* Svijetlosiva boja pri prelasku mišem */
+  }
+
+  .styled-table tr:last-child {
+    border-bottom: 2px solid #4CAF50; /* Zelena linija na dnu tablice */
+  }

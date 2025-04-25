@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Filmovi CSV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Podaci o filmovima</h1>
+    </header>
+
+    <nav aria-labelledby="primarna-navigacija"> <!--dodavanje aria elementa kako bi se poboljšala pristupačnost-->
+        <h2 id="primarna-navigacija" class="visually-hidden">Navigacija</h2> <!--dodao sam h2 naslov kako bi bio vizualno skriven-->
+        <div class="nav-container">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-button">☰ Izbornik</label>
+            <ul class="nav-menu">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="grafikon.html">Vizualizacija podataka</a></li>
+                <li><a href="slike.html">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="slika-sekcija">
+            <picture>
+                <source srcset="slika-velika.jpg" media="(min-width: 800px)">
+                <img src="slika-mala.jpg" alt="Ilustracija vremena i filmova" aria-hidden="true">
+            </picture>
+        </section>
+
+        <h2>Vremenski Podaci</h2>
+        <table class="styled-table"> <!--tablice stilizirane u style.css-->
+            <tr>
+                <th>Temperatura (°C)</th>
+                <th>Vlažnost (%)</th>
+                <th>Brzina vjetra (km/h)</th>
+                <th>Padaline (%)</th>
+            </tr>
+            <tr><td>23</td><td>69</td><td>9.5</td><td>10</td></tr>
+            <tr><td>29</td><td>82</td><td>18</td><td>78</td></tr>
+        </table>
+
+        <h2>Popularni Filmovi</h2>
+        <div id="filteri">
+            <select id="filter-genre">
+              <option value="">-- Odaberi žanr --</option>
+              <option value="Comedy">Comedy</option>
+              <option value="Drama">Drama</option>
+              <option value="Romantic">Romantic</option>
+              <option value="Crime">Crime</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Adventure">Adventure</option>
+              <option value="Action">Action</option>
+              <option value="Western">Western</option>
+              <option value="Spy">Spy</option>
+              <option value="Horror">Adventure</option>
+              <option value="Sci-Fi">Adventure</option>
+
+            </select>
+
+            <input type="number" id="filter-year" placeholder="Godina od" min="1900" max="2025">
+
+            <select id="filter-country">
+              <option value="">-- Odaberi državu --</option>
+              <option value="United States">United States</option>
+              <option value="Italy">Italy</option>
+              <option value="France">France</option>
+              <option value="Spain">Spain</option>
+              <option value="Great Britain">Great Britain</option>
+              <option value="Germany">Germany</option>
+              <option value="Australia">Australia</option>
+            </select>
+
+            <input type="range" id="filter-rating" min="0" max="10" step="0.1" value="7">
+            <span id="rating-value">7.0</span>
+
+            <button id="primijeni-filtere">Filtriraj</button>
+        </div>
+        <table class="styled-table" id="filmovi-tablica">
+            <thead>
+              <tr>
+                <th>Naslov</th>
+                <th>Godina</th>
+                <th>Žanr</th>
+                <th>Trajanje</th>
+                <th>Država</th>
+                <th>Broj glasova</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- JavaScript će ovdje umetati retke -->
+            </tbody>
+          </table>
+        <aside style="width: 30%; float: right; padding: 10px; background-color: #f0f0f0; border-left: 2px solid #ccc;">
+            <h2>Pogledajte lokaciju</h2>
+            <!-- dodavanje aside s Google mapom -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093664!2d144.9537353153156!3d-37.81627977975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2shr!4v1616656809021!5m2!1sen!2shr"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </aside>
+        <button class="interactive-button">Klikni me</button> <!--dodavanje gumba kao interaktivnog elementa-->
+
+        <section class="responsive-image"> <!-- dodavanje responzivne slike koja se mijenja s promjenom veličine prozora -->
+            <picture>
+                <!-- Slika za male ekrane -->
+                <source srcset="https://unsplash.it/300/200?random=12" media="(max-width: 600px)">
+                <!-- Slika za srednje ekrane -->
+                <source srcset="https://unsplash.it/300/200?random=7" media="(max-width: 1024px)">
+                <!-- Slika za velike ekrane (default) -->
+                <img src="https://unsplash.it/300/200?random=16" alt="Tematska slika">
+            </picture>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
